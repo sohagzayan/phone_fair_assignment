@@ -20,3 +20,94 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #191824;
 }
+
+/*===================
+ start header title section 
+ ======================================= */
+
+.header_title {
+  color: #00a3ff;
+  margin-top: 30px;
+  font-weight: 700;
+  display: inline-block;
+  border-bottom: 1px solid #00a2ff33;
+  position: relative;
+  z-index: 99;
+}
+
+.header_title::after {
+  content: "";
+  width: 100%;
+  height: 50%;
+  background-color: #00a3ff;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+/*=================
+ start search_section
+ ==============================*/
+
+.srarchBer {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+.search_section {
+  width: 70%;
+  margin: auto;
+  height: 50px;
+  background-color: #21212e;
+  box-shadow: 5px 5px 25px #11101a50, -5px -5px 25px #11101a38;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.4s ease-in-out;
+  position: relative;
+}
+.search_section.active_border {
+  border: 1px solid #00a3ff;
+}
+.searchIcons {
+  position: absolute;
+  display: block;
+  left: 15px;
+  top: 11px;
+}
+.searchIcons .cions_search {
+  color: #00a3ff;
+  width: 25px;
+}
+input {
+  width: 80%;
+  margin: auto;
+  display: block;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #bababf;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/*================
+ btn design
+ ===========================  */
+
+.btn_Search {
+  background-color: #00a3ff;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-weight: 700;
+}
+.btn_Search:hover {
+  background-color: transparent;
+  color: #00a3ff;
+}
