@@ -10,7 +10,7 @@ const showMore = document.querySelector(".showMore");
 const modal_Overlay = document.querySelector(".modal_Overlay");
 const error = document.querySelector(".error");
 const Counter_all_details = document.querySelector(".Counter_all_details");
-
+const loading_image = document.querySelector('.loading_image')
 /*=========
 all function
 =============================*/
@@ -82,6 +82,7 @@ const generateHtml = (data) => {
       // showDwtailsOnModal()
       getDetailsDataFtching(item.slug);
     }
+
 
     row.appendChild(div);
   });

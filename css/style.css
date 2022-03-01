@@ -267,6 +267,11 @@ modal design
   opacity: 1;
   pointer-events: painted;
 }
+.loading_image {
+  width: 200px;
+  margin: auto;
+}
+
 /*======================
  responsive code here 
  ==================================*/
