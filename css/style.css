@@ -111,3 +111,122 @@ input {
   background-color: transparent;
   color: #00a3ff;
 }
+.showMore {
+  margin: auto;
+  display: block;
+  background-color: #00a3ff;
+  color: white;
+  cursor: pointer;
+  display: none;
+  margin-top: 30px;
+}
+/*=====================
+ start card_section 
+ ================================== */
+
+.card {
+  background-color: #21212e;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 25px #11101a50, -5px -5px 25px #11101a38;
+  border: 1px solid rgba(255, 255, 255, 0.164);
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.card_section {
+  margin-top: 40px;
+}
+
+.card img {
+  width: 200px;
+  display: block;
+  margin: auto;
+  box-shadow: 5px 5px 25px #11101a83, -5px -5px 25px #11101a8c;
+}
+.card .btn_details {
+  background-color: #00a3ff;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+.card .card_details {
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+}
+
+/*================ 
+modal design 
+========================== */
+.modal_Overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.842);
+}
+.modal_cusom {
+  height: 530px;
+  width: 900px;
+  margin: auto;
+  background-color: #21212e !important;
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  overflow: hidden;
+  z-index: 99;
+  border-radius: 10px;
+}
+
+.modal_cusom .phone_image img {
+  margin-bottom: 20px;
+}
+.modal_cusom .phone_core_details {
+  border-bottom: 1px solid #8260d5;
+}
+
+.modal_cusom .phone_image img {
+  margin-bottom: 20px;
+}
+.modal_cusom h5 {
+  color: #d9d9dc;
+}
+.modal_cusom h5 strong {
+  color: #8260d5;
+}
+.modal_cusom img {
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+.close_icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  color: red;
+  cursor: pointer;
+}
+.modal_Overlay {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  transform: scale(4);
+}
+.modal_Overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: painted;
+  transform: scale(1);
+}
