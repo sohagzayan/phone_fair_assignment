@@ -256,3 +256,73 @@ modal design
   pointer-events: painted;
   transform: scale(1);
 }
+
+/*======================
+ responsive code here 
+ ==================================*/
+@media (max-width: 530px) {
+  .text-center h1 {
+    font-size: 20px;
+  }
+
+  .search_section {
+    width: 100%;
+  }
+  .searchIcons .cions_search {
+    color: #00a3ff;
+    width: 20px;
+  }
+  .searchIcons {
+    position: absolute;
+    display: block;
+    left: 5px;
+    top: 10px;
+  }
+  .search_section input {
+    font-size: 13px;
+  }
+
+  .btn_Search {
+    font-size: 12px;
+    top: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal_container .modal_wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal_cusom {
+    height: auto;
+    width: 400px;
+    padding: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .modal_cusom::-webkit-scrollbar-thumb {
+    color: tomato !important;
+    background-color: #191824;
+  }
+  .modal_cusom::-webkit-scrollbar {
+    color: blue !important;
+    background-color: tomato !important;
+  }
+  .modal_cusom::-webkit-scrollbar-track {
+    background-color: #21212e !important;
+  }
+  .modal_cusom::-webkit-scrollbar-corner {
+    border-radius: 10px;
+  }
+  .modal_cusom .phone_image img {
+    width: 100px;
+  }
+  .mainFuture h5 {
+    font-size: 13px;
+  }
+  .close_icon {
+    right: 30px;
+    top: 10px;
+  }
+}

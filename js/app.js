@@ -94,7 +94,7 @@ const getShopeData = (e) => {
     error.innerHTML = ''
   }else{
       error.classList.add('active')
-      error.innerHTML = 'Plese type your ketword'
+      error.innerHTML = 'please type your special keyword first'
   }
 };
 
@@ -114,7 +114,7 @@ function showDwtailsOnModal(data) {
   modal_wrapper.classList.add("modal_cusom");
   modal_wrapper.innerHTML = `
   <div class="modal_container ">
-        <div class="d-flex align-items-center">
+        <div class=" modal_wrapper d-flex align-items-center">
           <div class="phone_image p-5">
             <img src="${image ? image : 'Not Found'}" alt="image" />
             <div class="phone_core_details">
