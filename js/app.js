@@ -9,7 +9,8 @@ const row = document.querySelector(".row");
 const showMore = document.querySelector(".showMore");
 const modal_Overlay = document.querySelector(".modal_Overlay");
 const error = document.querySelector('.error')
-console.log(input);
+const Counter_all_details = document.querySelector('.Counter_all_details')
+
 
 /*=========
 all function
@@ -32,12 +33,15 @@ const fetchigData = (searchValue) => {
 };
 
 const displayData = (data) => {
+ 
   showMore.addEventListener("click", () => {
     generateHtml(data);
   });
   if (data.length > 20) {
     showMore.style.display = "block";
     generateHtml(data.slice(0, 20));
+    TotalDisplayData = data.slice(0,20).length
+    Counter_all_details.classList.add('active')
     return data.slice(0, 20);
   } else {
     return generateHtml(data);
@@ -77,19 +81,18 @@ const generateHtml = (data) => {
     }
 
     row.appendChild(div);
-    console.log(item);
   });
 };
 
 const getShopeData = (e) => {
     e.preventDefault();
+    Counter_all_details.innerHTML = ''
     showMore.style.display = 'none'
     row.innerHTML = ''
   const searchValue = input.value;
   if(searchValue){
     input.value = "";
     fetchigData(searchValue);
-    console.log(searchValue);
     error.classList.remove('active')
     error.innerHTML = ''
   }else{
@@ -106,8 +109,8 @@ const getDetailsDataFtching = (id) => {
 };
 
 function showDwtailsOnModal(data) {
-  const { brand, image, mainFeatures, name, others, releaseDate } = data;
-  console.log(data);
+  const { brand, image, mainFeatures, name, releaseDate } = data;
+  
 
   modal_Overlay.classList.add("active");
   const modal_wrapper = document.createElement("div");
@@ -132,44 +135,44 @@ function showDwtailsOnModal(data) {
           <div class="mainFuture p-2">
             <h5>
               <strong>chipSet</strong>
-              <small>${mainFeatures.chipSet}</small>
+              <small>${mainFeatures.chipSet ? mainFeatures.chipSet : 'not find'}</small>
             </h5>
             <h5>
               <strong>DisplaySize</strong>
-              <small>${mainFeatures.DisplaySize}</small>
+              <small>${mainFeatures.DisplaySize ? mainFeatures.DisplaySize : 'not find'}</small>
             </h5>
             <h5>
               <strong>Memory</strong>
-              <small>${mainFeatures.memory}</small>
+              <small>${mainFeatures.memory ? mainFeatures.memory : 'not find'}</small>
             </h5>
             <h5>
               <strong>Strorage</strong>
-              <small>${mainFeatures.storage}</small>
+              <small>${mainFeatures.storage ? mainFeatures.storage : 'not find'}</small>
             </h5>
             <div className="othersFuture">
               <h5>
                 <strong>Bluetooth</strong>
-                <small>${others.Bluetooth}</small>
+                <small>${data.others ? data.others.Bluetooth : 'not find'}</small>
               </h5>
               <h5>
                 <strong>GPS</strong>
-                <small>${others.GPS ? others.GPS : "not found gps"}</small>
+                <small>${data.others ? data.others.GPS : "not found gps"}</small>
               </h5>
               <h5>
                 <strong>NFC</strong>
-                <small>${others.NFC ? others.NFC : "not found nfc"}</small>
+                <small>${data.others ? data.others.NFC : "not found nfc"}</small>
               </h5>
               <h5>
                 <strong>Radio</strong>
-                <small>${others.Radio ? others.Radio : 'not found radio'}</small>
+                <small>${data.others ? data.others.Radio : 'not found radio'}</small>
               </h5>
               <h5>
                 <strong>USB</strong>
-                <small>${others.USB ? others.USB : "not found usb"}</small>
+                <small>${data.others? data.others.USB : "not found usb"}</small>
               </h5>
               <h5>
                 <strong>WLAN</strong>
-                <small>${others.WLAN ? others.WLAN : 'not found wlan'}</small>
+                <small>${data.others ? data.others.WLAN : 'not found wlan'}</small>
               </h5>
               <h5>
               <strong>Sensors :</strong>

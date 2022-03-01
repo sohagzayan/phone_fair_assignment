@@ -256,7 +256,17 @@ modal design
   pointer-events: painted;
   transform: scale(1);
 }
-
+.Counter_all_details {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.Counter_all_details.active {
+  color: #00a3ff;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: painted;
+}
 /*======================
  responsive code here 
  ==================================*/
