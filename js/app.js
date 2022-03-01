@@ -115,6 +115,7 @@ function showDwtailsOnModal(data) {
   modal_Overlay.classList.add("active");
   const modal_wrapper = document.createElement("div");
   modal_wrapper.classList.add("modal_cusom");
+  console.log(data)
   modal_wrapper.innerHTML = `
   <div class="modal_container ">
         <div class=" modal_wrapper d-flex align-items-center">
@@ -139,7 +140,7 @@ function showDwtailsOnModal(data) {
             </h5>
             <h5>
               <strong>DisplaySize</strong>
-              <small>${mainFeatures.DisplaySize ? mainFeatures.DisplaySize : 'not find'}</small>
+              <small>${mainFeatures.displaySize ? mainFeatures.displaySize : 'not find'}</small>
             </h5>
             <h5>
               <strong>Memory</strong>
