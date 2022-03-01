@@ -306,7 +306,7 @@ modal design
   }
   .modal_cusom {
     height: auto;
-    width: 400px;
+    width: 430px;
     padding: 30px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -329,7 +329,7 @@ modal design
     width: 100px;
   }
   .mainFuture h5 {
-    font-size: 13px;
+    font-size: 15px;
   }
   .close_icon {
     right: 30px;
