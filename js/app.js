@@ -8,7 +8,7 @@ const body = document.querySelector("body");
 const row = document.querySelector(".row");
 const showMore = document.querySelector(".showMore");
 const modal_Overlay = document.querySelector(".modal_Overlay");
-
+const error = document.querySelector('.error')
 console.log(input);
 
 /*=========
@@ -19,7 +19,16 @@ const fetchigData = (searchValue) => {
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
   fetch(url)
     .then((response) => response.json())
-    .then((details) => displayData(details.data));
+    .then((details) => {
+        if( details.data.length <= 0){
+            error.classList.add('active')
+           error.innerHTML=` <span>( ${searchValue} )</span> ?  this keyword not find any data` 
+        }else{
+            displayData(details.data)
+            error.innerHTML = ''
+            error.classList.remove('active')
+        }
+    } );
 };
 
 const displayData = (data) => {
@@ -73,11 +82,20 @@ const generateHtml = (data) => {
 };
 
 const getShopeData = (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    showMore.style.display = 'none'
+    row.innerHTML = ''
   const searchValue = input.value;
-  input.value = "";
-  fetchigData(searchValue);
-  console.log(searchValue);
+  if(searchValue){
+    input.value = "";
+    fetchigData(searchValue);
+    console.log(searchValue);
+    error.classList.remove('active')
+    error.innerHTML = ''
+  }else{
+      error.classList.add('active')
+      error.innerHTML = 'Plese type your ketword'
+  }
 };
 
 const getDetailsDataFtching = (id) => {

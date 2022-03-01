@@ -123,7 +123,9 @@ input {
 /*=====================
  start card_section 
  ================================== */
-
+.card_section {
+  margin-top: 20px;
+}
 .card {
   background-color: #21212e;
   padding: 25px;
@@ -225,6 +227,30 @@ modal design
   transform: scale(4);
 }
 .modal_Overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: painted;
+  transform: scale(1);
+}
+
+/*================
+ Error sms handling 
+ ============================= */
+
+.error {
+  color: red;
+  font-size: 20px;
+  margin: 10px 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.6);
+  transition: 0.4s ease-in-out;
+}
+.error span {
+  color: #00a3ff;
+}
+.error.active {
   visibility: visible;
   opacity: 1;
   pointer-events: painted;
