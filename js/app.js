@@ -10,7 +10,7 @@ const showMore = document.querySelector(".showMore");
 const modal_Overlay = document.querySelector(".modal_Overlay");
 const error = document.querySelector(".error");
 const Counter_all_details = document.querySelector(".Counter_all_details");
-const loading_image = document.querySelector('.loading_image')
+const loading_image = document.querySelector(".loading_image");
 /*=========
 all function
 =============================*/
@@ -31,6 +31,10 @@ const fetchigData = (searchValue) => {
     });
 };
 
+/*=========================
+ Display data on the fast user search 
+ =========================================*/
+
 const displayData = (data) => {
   showMore.addEventListener("click", () => {
     generateHtml(data);
@@ -50,7 +54,6 @@ const showAllData = () => {
   generateHtml(data);
 };
 
-
 /*==================
 generate Html Func 
 ================================*/
@@ -58,7 +61,7 @@ const generateHtml = (data) => {
   const row = document.querySelector(".row");
   row.innerHTML = "";
   data.forEach((item) => {
-      console.log(item)
+    console.log(item);
     const button = document.createElement("button");
     button.addEventListener("click", getDetails);
     const card = document.createElement("div");
@@ -69,26 +72,22 @@ const generateHtml = (data) => {
     button.innerText = "Details";
     div.classList.add("col-lg-4", "col-md-6", "col-sm-12");
     card.innerHTML = `
-                    <img src="${item.image}" alt="" />
-                    <div class="card_details">
-                      <h4>${item.phone_name}</h4>
-                      <h5> Brand Name : ${item.brand}</h5>
-                    </div>
-        `;
+                      <img src="${item.image}" alt="" />
+                        <div class="card_details">
+                          <h4>${item.phone_name}</h4>
+                          <h5> Brand Name : ${item.brand}</h5>
+                      </div>
+                      `;
     div.appendChild(card);
     card.appendChild(button);
 
     function getDetails() {
-      // showDwtailsOnModal()
       getDetailsDataFtching(item.slug);
     }
-
 
     row.appendChild(div);
   });
 };
-
-
 
 /*=================
  Getting Data 
@@ -110,7 +109,6 @@ const getShopeData = (e) => {
   }
 };
 
-
 /*==========================================
  Fatching item  Details data on Fast url 
  =======================================================*/
@@ -121,8 +119,6 @@ const getDetailsDataFtching = (id) => {
     .then((response) => response.json())
     .then((data) => showDwtailsOnModal(data.data));
 };
-
-
 
 /*======================================
 Show details Data on Modal Manageer
@@ -152,6 +148,7 @@ function showDwtailsOnModal(data) {
             </div>
           </div>
           <div class="mainFuture p-2">
+              <h5 class="title_menu">Main Features</h5>
             <h5>
               <strong>chipSet</strong>
               <small>${
@@ -177,6 +174,8 @@ function showDwtailsOnModal(data) {
               }</small>
             </h5>
             <div className="othersFuture">
+            <h5 class="title_menu">Others Future</h5>
+
               <h5>
                 <strong>Bluetooth</strong>
                 <small>${
@@ -213,6 +212,8 @@ function showDwtailsOnModal(data) {
                   data.others ? data.others.WLAN : "not found wlan"
                 }</small>
               </h5>
+            <h5 class="title_menu">Sensors</h5>
+
               <h5>
               <strong>Sensors :</strong>
               <small > ${
@@ -244,10 +245,7 @@ function showDwtailsOnModal(data) {
       </div>
     `;
   modal_Overlay.appendChild(modal_wrapper);
-  // body.appendChild(modal_Overlay)
 }
-
-
 
 /*======================
 close modal Func 

@@ -171,7 +171,7 @@ modal design
   background-color: rgba(0, 0, 0, 0.842);
 }
 .modal_cusom {
-  height: 530px;
+  height: 570px;
   width: 900px;
   margin: auto;
   background-color: #21212e !important;
@@ -186,7 +186,11 @@ modal design
   z-index: 99;
   border-radius: 10px;
 }
-
+.title_menu {
+  text-align: center;
+  text-transform: uppercase;
+  color: #00a3ff !important;
+}
 .modal_cusom .phone_image img {
   margin-bottom: 20px;
 }
@@ -199,6 +203,7 @@ modal design
 }
 .modal_cusom h5 {
   color: #d9d9dc;
+  font-size: 18px;
 }
 .modal_cusom h5 strong {
   color: #8260d5;
@@ -211,8 +216,8 @@ modal design
 
 .close_icon {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 10px;
+  top: 20px;
   display: block;
   width: 40px;
   height: 40px;
